@@ -1,0 +1,84 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+  /* implies on all the html elements */
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box; /* getting rid of unnessecery defaults */
+}
+
+body {
+  font-family: "lato", sans-serif; /* all related to font should go to body*/
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; /*1.7 times bigger*/
+  color: #777;
+  padding: 30px; /*put a padding around the whole body*/
+}
+
+.header {
+  height: 95vh; /* the height will always 95% of the view port height */
+  background-image: linear-gradient(
+      to right bottom,
+      hsla(111, 55%, 64%, 0.795),
+      hsla(160, 64%, 43%, 0.795)
+    ),
+    /* we reduce opacity by sliding on the colour */
+      /*adds up-left to right-bottm light-green to dark-green gradient effect*/
+      url(../img/hero.jpg);
+  background-size: cover; /*fit into the view port*/
+  background-position: top; /*top of the image stays top*/
+  position: relative; /*cuz this is the parent of the child logo*/
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /*shape of the bg with co-ordinates. There is a clip path maker online*/
+}
+
+.logo-box {
+  position: absolute; /*position of parent should be relative*/
+  top: 40px; /*from the parent element*/
+  left: 40px;
+}
+
+.logo {
+  height: 35px; /*logo height. width auto*/
+}
+
+.text-box {
+  position: absolute;
+  top: 40%; /*of the parent element*/
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /*shifts 50% of the elements height left and up*/
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.heading-primary-main {
+  display: block; /*puts it on top of other. block takes whole width!*/
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px; /*adds the width!*/
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700; /*density of font*/
+  letter-spacing: 17.4px;
+}
