@@ -1,0 +1,225 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+  /* implies on all the html elements */
+  margin: 0px;
+  padding: 0;
+  box-sizing: border-box; /* getting rid of unnessecery defaults */
+}
+
+body {
+  font-family: "lato", sans-serif; /* all related to font should go to body*/
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7; /*1.7 times bigger*/
+  color: #777;
+  padding: 30px; /*put a padding around the whole body*/
+}
+
+.header {
+  height: 95vh; /* the height will always 95% of the view port height */
+  background-image: linear-gradient(
+      to right bottom,
+      hsla(111, 55%, 64%, 0.795),
+      hsla(160, 64%, 43%, 0.795)
+    ),
+    /* we reduce opacity by sliding on the colour */
+      /*adds up-left to right-bottm light-green to dark-green gradient effect*/
+      url(../img/hero.jpg);
+  background-size: cover; /*fit into the view port*/
+  background-position: top; /*top of the image stays top*/
+  position: relative; /*cuz this is the parent of the child logo*/
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /*shape of the bg with co-ordinates. There is a clip path maker online*/
+}
+
+.logo-box {
+  position: absolute; /*position of parent should be relative*/
+  top: 40px; /*from the parent element*/
+  left: 40px;
+}
+
+.logo {
+  height: 35px; /*logo height. width auto*/
+}
+
+.text-box {
+  position: absolute;
+  top: 40%; /*of the parent element*/
+  left: 50%;
+  transform: translate(
+    -50%,
+    -50%
+  ); /*shifts 50% of the elements height left and up*/
+  text-align: center; /*mainly to centerise the button*/
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+
+  backface-visibility: hidden; /*removes the shake from the animation*/
+  margin-bottom: 16px;
+}
+
+.heading-primary-main {
+  display: block; /*puts it on top of other. block takes whole width!*/
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px; /*adds the width!*/
+
+  /*animation*/
+  animation-name: moveInLeft; /*calling the animation*/
+  animation-duration: 1s; /*total time of the animation*/
+  /* 
+  animation-delay: 3s; applying this first it'll wait 3s
+  animation-iteration-count: 3; how many times the animation should happen
+  animation-timing-function: ease-in; will def the timing of the animation. like for ease-in it'll start slow and go fast! check google for more
+  */
+  animation-timing-function: ease-out;
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700; /*density of font*/
+  letter-spacing: 17.4px;
+
+  /*animation*/
+  animation: moveInRight 1s ease-out; /*let CSS find out the rest*/
+}
+
+/*animetions*/
+@keyframes moveInLeft {
+  /*browser can only animate transform and opacity*/
+  0% {
+    /*at the start*/
+    opacity: 0; /*invisible*/
+    transform: translate(-100px); /*moved to left*/
+  }
+
+  /* 60% {
+    transform: rotate(120deg);
+  } play around with it as much as you like! */
+
+  80% {
+    opacity: 0.8;
+    transform: translate(10px); /*tips a bit to right then comes back!*/
+  }
+
+  100% {
+    /*at finish*/
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  /*browser can only animate transform and opacity*/
+  0% {
+    /*at the start*/
+    opacity: 0; /*invisible*/
+    transform: translate(100px); /*moved to right*/
+  }
+
+  80% {
+    opacity: 0.8;
+    transform: translate(-10px);
+  }
+
+  100% {
+    /*at finish*/
+    opacity: 1;
+    transform: translate(0); /*original position*/
+  }
+}
+
+@keyframes moveInButton {
+  /*browser can only animate transform and opacity*/
+  0% {
+    /*at the start*/
+    opacity: 0; /*invisible*/
+    transform: translateY(30px); /*moved to bottom*/
+  }
+
+  80% {
+    opacity: 0.8;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    /*at finish*/
+    opacity: 1;
+    transform: translateY(0); /*original position*/
+  }
+}
+
+.btn:link,
+.btn:visited {
+  /*pseudo class. State of button selector. configures the special type (here the button is a link:for links: site , visit: another click!)*/
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px; /*leftright topbottom : 4 nums for four side*/
+  display: inline-block; /*to seperate it from other lines*/
+  border-radius: 100px; /*making the border round*/
+  position: relative; /*for after effect*/
+
+  /*animation*/
+  transition: all 0.2s; /*must be added to main class. has effect on all changes of it*/
+}
+
+.btn:hover {
+  transform: translateY(-3px); /*popup effect when hovered*/
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.199); /*x y blurr color .black shadow with 20% opacity*/
+}
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.199);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+/*more pseudo elements*/
+.btn:after {
+  /*directly inherits from button prop*/
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute; /*should be relative to button*/
+  top: 0;
+  left: 0;
+  z-index: -1; /*a white sheet behind the button*/
+
+  transition: all 0.4s;
+}
+
+.btn-white:after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.5) scaleY(1.7);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInButton 1s ease-out 0.75s;
+  animation-fill-mode: backwards; /*this will auto set the zero percent property prior!*/
+}

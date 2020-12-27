@@ -7,20 +7,36 @@ Dark green: #28b485
 
 */
 
-* {
+/*module 3*/
+/*adding new font size from module 3*/
+/*changed the code into BEN build!*/
+
+/*module 4*/
+
+*,
+*:after, /*no funny business what so ever!*/
+*::before {
   /* implies on all the html elements */
   margin: 0px;
   padding: 0;
-  box-sizing: border-box; /* getting rid of unnessecery defaults */
+  /*box-sizing: border-box; /* getting rid of unnessecery defaults */
+  box-sizing: inherit; /*from body*/
+}
+
+/*for font size declaration*/
+html {
+  font-size: 62.5%; /*use this instead of px . default is 16 px 62.5% of that is 10px. */
+  /*we are using rem that means times. changing 1.6rem means 1.6 timse 10px here. meaning 16px*/
 }
 
 body {
   font-family: "lato", sans-serif; /* all related to font should go to body*/
   font-weight: 400;
-  font-size: 16px;
+  /*font-size: 16px;*/
   line-height: 1.7; /*1.7 times bigger*/
   color: #777;
-  padding: 30px; /*put a padding around the whole body*/
+  padding: 3rem; /*put a padding around the whole body*/
+  box-sizing: border-box; /*from * we took . now we will inherit it there.*/
 }
 
 .header {
@@ -44,17 +60,17 @@ body {
   ); /*shape of the bg with co-ordinates. There is a clip path maker online*/
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute; /*position of parent should be relative*/
-  top: 40px; /*from the parent element*/
-  left: 40px;
+  top: 4rem; /*from the parent element*/
+  left: 4rem;
 }
 
-.logo {
-  height: 35px; /*logo height. width auto*/
+.header__logo {
+  height: 3.5rem; /*logo height. width auto*/
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 40%; /*of the parent element*/
   left: 50%;
@@ -70,14 +86,14 @@ body {
   text-transform: uppercase;
 
   backface-visibility: hidden; /*removes the shake from the animation*/
-  margin-bottom: 16px;
+  margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block; /*puts it on top of other. block takes whole width!*/
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px; /*adds the width!*/
+  letter-spacing: 3.5rem; /*adds the width!*/
 
   /*animation*/
   animation-name: moveInLeft; /*calling the animation*/
@@ -90,11 +106,11 @@ body {
   animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700; /*density of font*/
-  letter-spacing: 17.4px;
+  letter-spacing: 1.75rem;
 
   /*animation*/
   animation: moveInRight 1s ease-out; /*let CSS find out the rest*/
@@ -106,7 +122,7 @@ body {
   0% {
     /*at the start*/
     opacity: 0; /*invisible*/
-    transform: translate(-100px); /*moved to left*/
+    transform: translate(-10rem); /*moved to left*/
   }
 
   /* 60% {
@@ -115,7 +131,7 @@ body {
 
   80% {
     opacity: 0.8;
-    transform: translate(10px); /*tips a bit to right then comes back!*/
+    transform: translate(1rem); /*tips a bit to right then comes back!*/
   }
 
   100% {
@@ -130,12 +146,12 @@ body {
   0% {
     /*at the start*/
     opacity: 0; /*invisible*/
-    transform: translate(100px); /*moved to right*/
+    transform: translate(10rem); /*moved to right*/
   }
 
   80% {
     opacity: 0.8;
-    transform: translate(-10px);
+    transform: translate(-1rem);
   }
 
   100% {
@@ -150,12 +166,13 @@ body {
   0% {
     /*at the start*/
     opacity: 0; /*invisible*/
-    transform: translateY(30px); /*moved to bottom*/
+    transform: translateY(3rem); /*moved to bottom*/
   }
 
   80% {
     opacity: 0.8;
-    transform: translateY(-10px);
+    transform: translateY(-1rem);
+    transform: ;
   }
 
   100% {
@@ -170,10 +187,11 @@ body {
   /*pseudo class. State of button selector. configures the special type (here the button is a link:for links: site , visit: another click!)*/
   text-transform: uppercase;
   text-decoration: none;
-  padding: 15px 40px; /*leftright topbottom : 4 nums for four side*/
+  padding: 1.5rem 4rem; /*leftright topbottom : 4 nums for four side*/
   display: inline-block; /*to seperate it from other lines*/
-  border-radius: 100px; /*making the border round*/
+  border-radius: 10rem; /*making the border round*/
   position: relative; /*for after effect*/
+  font-size: 1.6rem;
 
   /*animation*/
   transition: all 0.2s; /*must be added to main class. has effect on all changes of it*/
@@ -181,15 +199,15 @@ body {
 
 .btn:hover {
   transform: translateY(-3px); /*popup effect when hovered*/
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.199); /*x y blurr color .black shadow with 20% opacity*/
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.199); /*x y blurr color .black shadow with 20% opacity*/
 }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.199);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.199);
 }
 
-.btn-white {
+.btn--white {
   background-color: #fff;
   color: #777;
 }
@@ -201,7 +219,7 @@ body {
   display: inline-block;
   height: 100%;
   width: 100%;
-  border-radius: 100px;
+  border-radius: 10rem;
   position: absolute; /*should be relative to button*/
   top: 0;
   left: 0;
@@ -210,7 +228,7 @@ body {
   transition: all 0.4s;
 }
 
-.btn-white:after {
+.btn--white:after {
   background-color: #fff;
 }
 
@@ -219,7 +237,19 @@ body {
   opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
   animation: moveInButton 1s ease-out 0.75s;
   animation-fill-mode: backwards; /*this will auto set the zero percent property prior!*/
+}
+
+@media (max-width: 800px) {
+  html {
+    font-size: 48%;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 40%;
+  }
 }
