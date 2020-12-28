@@ -6,211 +6,195 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
-
 /*module 3*/
 /*adding new font size from module 3*/
 /*changed the code into BEN build!*/
-
 /*module 4*/
-
 *,
-*:after, /*no funny business what so ever!*/
+*::after,
 *::before {
   /* implies on all the html elements */
   margin: 0px;
   padding: 0;
   /*box-sizing: border-box; /* getting rid of unnessecery defaults */
-  box-sizing: inherit; /*from body*/
-}
+  box-sizing: inherit;
+  /*from body*/ }
 
 /*for font size declaration*/
 html {
-  font-size: 62.5%; /*use this instead of px . default is 16 px 62.5% of that is 10px. */
-  /*we are using rem that means times. changing 1.6rem means 1.6 timse 10px here. meaning 16px*/
-}
+  font-size: 62.5%;
+  /*use this instead of px . default is 16 px 62.5% of that is 10px. */
+  /*we are using rem that means times. changing 1.6rem means 1.6 timse 10px here. meaning 16px*/ }
 
 body {
-  font-family: "lato", sans-serif; /* all related to font should go to body*/
+  font-family: "lato", sans-serif;
+  /* all related to font should go to body*/
   font-weight: 400;
   /*font-size: 16px;*/
-  line-height: 1.7; /*1.7 times bigger*/
+  line-height: 1.7;
+  /*1.7 times bigger*/
   color: #777;
-  padding: 3rem; /*put a padding around the whole body*/
-  box-sizing: border-box; /*from * we took . now we will inherit it there.*/
-}
+  padding: 3rem;
+  /*put a padding around the whole body*/
+  box-sizing: border-box;
+  /*from * we took . now we will inherit it there.*/ }
 
 .header {
-  height: 95vh; /* the height will always 95% of the view port height */
-  background-image: linear-gradient(
-      to right bottom,
-      hsla(111, 55%, 64%, 0.795),
-      hsla(160, 64%, 43%, 0.795)
-    ),
-    /* we reduce opacity by sliding on the colour */
-      /*adds up-left to right-bottm light-green to dark-green gradient effect*/
-      url(../img/hero.jpg);
-  background-size: cover; /*fit into the view port*/
-  background-position: top; /*top of the image stays top*/
-  position: relative; /*cuz this is the parent of the child logo*/
-  clip-path: polygon(
-    0 0,
-    100% 0,
-    100% 75vh,
-    0 100%
-  ); /*shape of the bg with co-ordinates. There is a clip path maker online*/
-}
+  height: 95vh;
+  /* the height will always 95% of the view port height */
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.795), rgba(40, 180, 133, 0.795)), url(../img/hero.jpg);
+  background-size: cover;
+  /*fit into the view port*/
+  background-position: top;
+  /*top of the image stays top*/
+  position: relative;
+  /*cuz this is the parent of the child logo*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*shape of the bg with co-ordinates. There is a clip path maker online*/ }
 
 .header__logo-box {
-  position: absolute; /*position of parent should be relative*/
-  top: 4rem; /*from the parent element*/
-  left: 4rem;
-}
+  position: absolute;
+  /*position of parent should be relative*/
+  top: 4rem;
+  /*from the parent element*/
+  left: 4rem; }
 
 .header__logo {
-  height: 3.5rem; /*logo height. width auto*/
-}
+  height: 3.5rem;
+  /*logo height. width auto*/ }
 
 .header__text-box {
   position: absolute;
-  top: 40%; /*of the parent element*/
+  top: 40%;
+  /*of the parent element*/
   left: 50%;
-  transform: translate(
-    -50%,
-    -50%
-  ); /*shifts 50% of the elements height left and up*/
-  text-align: center; /*mainly to centerise the button*/
-}
+  transform: translate(-50%, -50%);
+  /*shifts 50% of the elements height left and up*/
+  text-align: center;
+  /*mainly to centerise the button*/ }
 
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-
-  backface-visibility: hidden; /*removes the shake from the animation*/
-  margin-bottom: 6rem;
-}
+  backface-visibility: hidden;
+  /*removes the shake from the animation*/
+  margin-bottom: 6rem; }
 
 .heading-primary--main {
-  display: block; /*puts it on top of other. block takes whole width!*/
+  display: block;
+  /*puts it on top of other. block takes whole width!*/
   font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 3.5rem; /*adds the width!*/
-
+  letter-spacing: 3.5rem;
+  /*adds the width!*/
   /*animation*/
-  animation-name: moveInLeft; /*calling the animation*/
-  animation-duration: 1s; /*total time of the animation*/
+  animation-name: moveInLeft;
+  /*calling the animation*/
+  animation-duration: 1s;
+  /*total time of the animation*/
   /* 
   animation-delay: 3s; applying this first it'll wait 3s
   animation-iteration-count: 3; how many times the animation should happen
   animation-timing-function: ease-in; will def the timing of the animation. like for ease-in it'll start slow and go fast! check google for more
   */
-  animation-timing-function: ease-out;
-}
+  animation-timing-function: ease-out; }
 
 .heading-primary--sub {
   display: block;
   font-size: 2rem;
-  font-weight: 700; /*density of font*/
+  font-weight: 700;
+  /*density of font*/
   letter-spacing: 1.75rem;
-
   /*animation*/
-  animation: moveInRight 1s ease-out; /*let CSS find out the rest*/
-}
+  animation: moveInRight 1s ease-out;
+  /*let CSS find out the rest*/ }
 
 /*animetions*/
 @keyframes moveInLeft {
   /*browser can only animate transform and opacity*/
   0% {
     /*at the start*/
-    opacity: 0; /*invisible*/
-    transform: translate(-10rem); /*moved to left*/
-  }
-
+    opacity: 0;
+    /*invisible*/
+    transform: translate(-10rem);
+    /*moved to left*/ }
   /* 60% {
     transform: rotate(120deg);
   } play around with it as much as you like! */
-
   80% {
     opacity: 0.8;
-    transform: translate(1rem); /*tips a bit to right then comes back!*/
-  }
-
+    transform: translate(1rem);
+    /*tips a bit to right then comes back!*/ }
   100% {
     /*at finish*/
     opacity: 1;
-    transform: translate(0);
-  }
-}
+    transform: translate(0); } }
 
 @keyframes moveInRight {
   /*browser can only animate transform and opacity*/
   0% {
     /*at the start*/
-    opacity: 0; /*invisible*/
-    transform: translate(10rem); /*moved to right*/
-  }
-
+    opacity: 0;
+    /*invisible*/
+    transform: translate(10rem);
+    /*moved to right*/ }
   80% {
     opacity: 0.8;
-    transform: translate(-1rem);
-  }
-
+    transform: translate(-1rem); }
   100% {
     /*at finish*/
     opacity: 1;
-    transform: translate(0); /*original position*/
-  }
-}
+    transform: translate(0);
+    /*original position*/ } }
 
 @keyframes moveInButton {
   /*browser can only animate transform and opacity*/
   0% {
     /*at the start*/
-    opacity: 0; /*invisible*/
-    transform: translateY(3rem); /*moved to bottom*/
-  }
-
+    opacity: 0;
+    /*invisible*/
+    transform: translateY(3rem);
+    /*moved to bottom*/ }
   80% {
     opacity: 0.8;
-    transform: translateY(-1rem);
-    transform: ;
-  }
-
+    transform: translateY(-1rem); }
   100% {
     /*at finish*/
     opacity: 1;
-    transform: translateY(0); /*original position*/
-  }
-}
+    transform: translateY(0);
+    /*original position*/ } }
 
 .btn:link,
 .btn:visited {
   /*pseudo class. State of button selector. configures the special type (here the button is a link:for links: site , visit: another click!)*/
   text-transform: uppercase;
   text-decoration: none;
-  padding: 1.5rem 4rem; /*leftright topbottom : 4 nums for four side*/
-  display: inline-block; /*to seperate it from other lines*/
-  border-radius: 10rem; /*making the border round*/
-  position: relative; /*for after effect*/
+  padding: 1.5rem 4rem;
+  /*leftright topbottom : 4 nums for four side*/
+  display: inline-block;
+  /*to seperate it from other lines*/
+  border-radius: 10rem;
+  /*making the border round*/
+  position: relative;
+  /*for after effect*/
   font-size: 1.6rem;
-
   /*animation*/
-  transition: all 0.2s; /*must be added to main class. has effect on all changes of it*/
-}
+  transition: all 0.2s;
+  /*must be added to main class. has effect on all changes of it*/ }
 
 .btn:hover {
-  transform: translateY(-3px); /*popup effect when hovered*/
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.199); /*x y blurr color .black shadow with 20% opacity*/
-}
+  transform: translateY(-3px);
+  /*popup effect when hovered*/
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.199);
+  /*x y blurr color .black shadow with 20% opacity*/ }
 
 .btn:active {
   transform: translateY(-1px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.199);
-}
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.199); }
 
 .btn--white {
   background-color: #fff;
-  color: #777;
-}
+  color: #777; }
 
 /*more pseudo elements*/
 .btn:after {
@@ -220,36 +204,30 @@ body {
   height: 100%;
   width: 100%;
   border-radius: 10rem;
-  position: absolute; /*should be relative to button*/
+  position: absolute;
+  /*should be relative to button*/
   top: 0;
   left: 0;
-  z-index: -1; /*a white sheet behind the button*/
-
-  transition: all 0.4s;
-}
+  z-index: -1;
+  /*a white sheet behind the button*/
+  transition: all 0.4s; }
 
 .btn--white:after {
-  background-color: #fff;
-}
+  background-color: #fff; }
 
 .btn:hover::after {
   transform: scaleX(1.5) scaleY(1.7);
-  opacity: 0;
-}
+  opacity: 0; }
 
 .btn--animated {
   animation: moveInButton 1s ease-out 0.75s;
-  animation-fill-mode: backwards; /*this will auto set the zero percent property prior!*/
-}
+  animation-fill-mode: backwards;
+  /*this will auto set the zero percent property prior!*/ }
 
 @media (max-width: 800px) {
   html {
-    font-size: 48%;
-  }
-}
+    font-size: 48%; } }
 
 @media (max-width: 600px) {
   html {
-    font-size: 40%;
-  }
-}
+    font-size: 40%; } }
