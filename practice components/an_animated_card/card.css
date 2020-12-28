@@ -86,6 +86,8 @@
   			border-radius: 100px;
   			box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 
+  			opacity: 0.8;
+
   			position: absolute;
   			top:85%;
   			left:30%;
@@ -195,6 +197,8 @@
   			border-radius: 100px;
   			box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 
+  			opacity: 0.8;
+
   			position: absolute;
   			top:85%;
   			left:30%;
@@ -303,6 +307,8 @@
   			background-color: #800800;
   			border-radius: 100px;
   			box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+
+  			opacity: 0.8;
 
   			position: absolute;
   			top:85%;
