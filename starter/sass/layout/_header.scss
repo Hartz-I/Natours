@@ -1,0 +1,42 @@
+.header {
+  height: 95vh; /* the height will always 95% of the view port height */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.795),
+      rgba($color-primary-dark, 0.795)
+    ),
+    /* we reduce opacity by sliding on the colour */
+      /*adds up-left to right-bottm light-green to dark-green gradient effect*/
+      url(../img/hero.jpg);
+  background-size: cover; /*fit into the view port*/
+  background-position: top; /*top of the image stays top*/
+  position: relative; /*cuz this is the parent of the child logo*/
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 75vh,
+    0 100%
+  ); /*shape of the bg with co-ordinates. There is a clip path maker online*/
+
+  //nesting using &
+  &__logo-box {
+    position: absolute; /*position of parent should be relative*/
+    top: 4rem; /*from the parent element*/
+    left: 4rem;
+  }
+
+  &__logo {
+    height: 3.5rem; /*logo height. width auto*/
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 40%; /*of the parent element*/
+    left: 50%;
+    transform: translate(
+      -50%,
+      -50%
+    ); /*shifts 50% of the elements height left and up*/
+    text-align: center; /*mainly to centerise the button*/
+  }
+}

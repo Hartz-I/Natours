@@ -1,0 +1,64 @@
+/*animetions*/
+@keyframes moveInLeft {
+  /*browser can only animate transform and opacity*/
+  0% {
+    /*at the start*/
+    opacity: 0; /*invisible*/
+    transform: translate(-10rem); /*moved to left*/
+  }
+
+  /* 60% {
+    transform: rotate(120deg);
+  } play around with it as much as you like! */
+
+  80% {
+    opacity: 0.8;
+    transform: translate(1rem); /*tips a bit to right then comes back!*/
+  }
+
+  100% {
+    /*at finish*/
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  /*browser can only animate transform and opacity*/
+  0% {
+    /*at the start*/
+    opacity: 0; /*invisible*/
+    transform: translate(10rem); /*moved to right*/
+  }
+
+  80% {
+    opacity: 0.8;
+    transform: translate(-1rem);
+  }
+
+  100% {
+    /*at finish*/
+    opacity: 1;
+    transform: translate(0); /*original position*/
+  }
+}
+
+@keyframes moveInButton {
+  /*browser can only animate transform and opacity*/
+  0% {
+    /*at the start*/
+    opacity: 0; /*invisible*/
+    transform: translateY(3rem); /*moved to bottom*/
+  }
+
+  80% {
+    opacity: 0.8;
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    /*at finish*/
+    opacity: 1;
+    transform: translateY(0); /*original position*/
+  }
+}
