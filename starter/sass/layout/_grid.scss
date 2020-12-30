@@ -3,7 +3,6 @@
 
 .row {
   max-width: $grid-width; //if not this then it will convert itself to percentage of the screen
-  background-color: #eeeeee;
   margin: 0 auto; //top bottom zero left-right auto. gets to middle
 
   &:not(:last-child) {
@@ -15,10 +14,6 @@
 
   [class^="col-"] {
     //selects all the classes that start with "col-" . "*=" means select that contains that part. "$=" means any class that ends with thet.
-    background-color: orangered;
-    padding: 1rem;
-    color: white;
-    border-radius: 10px;
     float: left; //but adding this the height colapses. so we use clearfix!
 
     &:not(:last-child) {
