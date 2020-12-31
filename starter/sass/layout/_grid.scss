@@ -52,4 +52,17 @@
       3 * ((100% - 3 *#{$gutter-horizontal}) / 4) + 2 *#{$gutter-horizontal}
     );
   }
+
+  // @media (max-width: 900px) {
+  //   .col-1-of-2 {
+  //     width: 80%;
+  //     margin-top: $gutter-vertical;
+  //   }
+
+  //   .col-1-of-4 {
+  //     width: 80%;
+  //     margin: 6rem;
+  //     margin-top: $gutter-vertical;
+  //   }
+  //}
 }
