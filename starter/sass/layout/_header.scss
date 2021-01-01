@@ -11,6 +11,7 @@
   background-size: cover; /*fit into the view port*/
   background-position: top; /*top of the image stays top*/
   position: relative; /*cuz this is the parent of the child logo*/
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(
     0 0,
     100% 0,
