@@ -1,0 +1,51 @@
+//importance of BEM is shown here! block element modifier!
+.composition {
+  position: relative;
+  &__photo {
+    //takes composition__photo
+    width: 55%; //using % in widh is good for resposive
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.4);
+    border-radius: 2px;
+    //absolute positioning is best way to go:active.
+    //with respect to previous parent position declaration
+    position: absolute;
+
+    //create the gap between the outline
+    outline-offset: 2rem;
+
+    //setting on z axis
+    z-index: 10;
+
+    //applying animation
+    transition: all 0.2s;
+
+    &--p1 {
+      left: 0;
+      top: -2rem;
+    }
+
+    &--p2 {
+      right: 0;
+      top: 2rem;
+    }
+
+    &--p3 {
+      left: 20%;
+      top: 10rem;
+    }
+
+    &:hover {
+      transform: scale(1.05) translateY(-0.5rem) rotate(5deg);
+      box-shadow: 0 2.5rem 4rem rgba($color-black, 0.5); //bigger and darker shadow
+      z-index: 20; //to display on top . higer than normal!
+
+      //creating border
+      outline: 1.5rem solid $color-primary;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    //selects all that not hovered on!
+    transform: scale(0.95);
+  }
+}

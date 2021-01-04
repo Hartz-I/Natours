@@ -1,0 +1,25 @@
+//will contain all the low level basics
+//like resets style for html and body-element selector
+
+//it's a partial sass file. starts with underscore
+
+*,
+*::after, /*no funny business what so ever!*/
+*::before {
+  /* implies on all the html elements */
+  margin: 0px;
+  padding: 0;
+  /*box-sizing: border-box; /* getting rid of unnessecery defaults */
+  box-sizing: inherit; /*from body*/
+}
+
+/*for font size declaration*/
+html {
+  //this defines what one rem is!
+  font-size: 62.5%; /*use this instead of px . default is 16 px 62.5% of that is 10px. */
+  /*we are using rem that means times. changing 1.6rem means 1.6 timse 10px here. meaning 16px*/
+}
+
+body {
+  box-sizing: border-box; /*from * we took . now we will inherit it there.*/
+}

@@ -1,0 +1,79 @@
+body {
+  font-family: "lato", sans-serif; /* all related to font should go to body*/
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7; /*1.7 times bigger*/
+  color: $color-gray-dark;
+  padding: 3rem; /*put a padding around the whole body*/
+}
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+
+  backface-visibility: hidden; /*removes the shake from the animation*/
+  margin-bottom: 6rem;
+
+  &--main {
+    display: block; /*puts it on top of other. block takes whole width!*/
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem; /*adds the width!*/
+
+    /*animation*/
+    animation-name: moveInLeft; /*calling the animation*/
+    animation-duration: 1s; /*total time of the animation*/
+    /* 
+  animation-delay: 3s; applying this first it'll wait 3s
+  animation-iteration-count: 3; how many times the animation should happen
+  animation-timing-function: ease-in; will def the timing of the animation. like for ease-in it'll start slow and go fast! check google for more
+  */
+    animation-timing-function: ease-out;
+  }
+
+  &--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700; /*density of font*/
+    letter-spacing: 1.75rem;
+
+    /*animation*/
+    animation: moveInRight 1s ease-out; /*let CSS find out the rest*/
+  }
+}
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700; //thick
+  display: inline-block; //to reduce the filling of whole line!
+  background-image: linear-gradient(
+    to right,
+    $color-primary-light,
+    $color-primary-dark
+  );
+  -webkit-background-clip: text; //clips the background only behind text
+  color: transparent; //text disapears and the clip remains
+  letter-spacing: 2px;
+
+  transition: all 0.2s;
+
+  &:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2);
+  }
+}
+
+.heading-tartiary {
+  font-size: $default-font-size;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: $default-font-size;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
